@@ -34,6 +34,10 @@ ul {
   margin-top: 14px;
   margin-bottom: 14px;
 }
+.requirements {
+  width: 100%;
+  background-color: lightyellow;
+}
 li {
   height: 26.5px;
   display: flex;
@@ -41,10 +45,13 @@ li {
   white-space: nowrap;
   align-items: center;
 }
-li:nth-of-type(even) {
+.hidden {
+  visibility: hidden;
+}
+.moneyItem:nth-of-type(even) {
   background-color: #e0e0e0;
 }
-li:nth-last-of-type(odd) {
+.moneyItem:nth-last-of-type(odd) {
   background-color: #f2f2f2;
 }
 .btns-container {
@@ -63,7 +70,7 @@ li:nth-last-of-type(odd) {
 .btn-success {
   border-radius: 3px;
 }
-h2#listFooter {
+.listFooter {
   display: flex;
   flex-direction: column;
   margin-top: auto;

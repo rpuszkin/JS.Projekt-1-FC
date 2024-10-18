@@ -10,9 +10,9 @@ function refreshView() {
     items.forEach((item, i) => {
       const listName = items === expenses ? "expenses" : "earnings";
 
-      const listItem = `<li id="li_${listName}_${i}">${i + 1}. ${item.name} - ${
-        item.value
-      } <div class="btns-container">
+      const listItem = `<li class="moneyItem" id="li_${listName}_${i}">${
+        i + 1
+      }. ${item.name} - ${item.value} <div class="btns-container">
       <button class="btn-danger" id="delete_${listName}_${i}">Usuń</button>
       <button class="btn-primary" id="edit_${listName}_${i}">Edytuj</button>
       </div></li>`;
@@ -108,7 +108,11 @@ document.getElementById("addNewEarning").addEventListener("click", function () {
   addItem(earnings, earningName, earningValue);
 });
 function edititem(type, index, listName) {
-  console.log(listName);
+  const edit_reqid = "edit_" + listName + "_requirements";
+  document.getElementById(edit_reqid).style.visibility = "visible";
+  setTimeout(function () {
+    document.getElementById(edit_reqid).style.visibility = "hidden";
+  }, 15000);
   function saveChanges(type, index, newEarningName, newValue) {
     if (newEarningName.length < 3) {
       alert("nazwa jest zbyt krótka");
